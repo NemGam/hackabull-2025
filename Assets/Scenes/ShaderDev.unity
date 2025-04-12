@@ -238,9 +238,6 @@ MonoBehaviour:
   sphereTransforms:
   - {fileID: 1766776841}
   - {fileID: 653766603}
-  sphereRadii:
-  - 1
-  - 1
 --- !u!4 &244478920
 Transform:
   m_ObjectHideFlags: 0
@@ -404,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 653766602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.026, y: 0.434, z: -0.044}
+  m_LocalPosition: {x: 2.134, y: 0.434, z: 0.199}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -899,8 +896,8 @@ Transform:
   m_GameObject: {fileID: 1766776837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.61, y: 0.434, z: -0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0.351, y: 0.434, z: 0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
