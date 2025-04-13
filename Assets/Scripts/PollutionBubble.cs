@@ -26,7 +26,6 @@ public class PollutionBubble : MonoBehaviour
             transform.localScale = Vector3.one * _currentExpansion; 
             if (_currentExpansion <= 0f) Destroy(gameObject);
         }
-        VolumeClip.Instance.ChangeOverallExpansion(_currentExpansion);
     }
 
     private void OnDisable()

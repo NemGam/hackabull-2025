@@ -11,10 +11,7 @@ public class Trash : MonoBehaviour
     private float _timer;
     [SerializeField]
     private Rigidbody rigidbody;
-
-    //Due to the RigidBody sleeping mechanism we have to track it ourselves. 
-    private bool _isColliding;
-
+    
     private int _groundLayer; 
     
     private void Start()
@@ -31,7 +28,6 @@ public class Trash : MonoBehaviour
         Debug.Log(other.gameObject.layer);
         if (other.gameObject.layer != _groundLayer) return;
         Debug.Log("Step 3");
-        _isColliding = true;
         enabled = true;
     }
     
@@ -53,7 +49,6 @@ public class Trash : MonoBehaviour
     {
         if (other.gameObject.layer != _groundLayer) return;
         enabled = false;
-        _isColliding = false;
         _timer = gracePeriod;
         _createdPollutionBubble.StartShrinkage();
         _createdPollutionBubble = null;

@@ -11,11 +11,9 @@ public class VolumeClip : MonoBehaviour
     [SerializeField, Tooltip("Dummy sphere, DO NOT DELETE. REQUIRED FOR SHADER TO WORK")] private Transform dummySphere;
     
     [SerializeField, Tooltip("List of sphere Transforms")]
-    private HashSet<Transform> _sphereTransforms = new HashSet<Transform>();
+    public readonly HashSet<Transform> SphereTransforms = new HashSet<Transform>();
 
     [SerializeField] private float maxExpansion;
-
-    public float OverallPollutionExpansion { get; private set; }
     
     private void Awake()
     {
@@ -31,47 +29,39 @@ public class VolumeClip : MonoBehaviour
 
         // DontDestroyOnLoad(gameObject);
     }
-
-    public void ChangeOverallExpansion(float delta)
-    {
-        OverallPollutionExpansion += delta;
-        
-        Debug.Log(OverallPollutionExpansion / maxExpansion);
-        
-    }
     
     public void Register(Transform self)
     {
-        _sphereTransforms.Add(self);
+        SphereTransforms.Add(self);
     }
 
     public void Unregister(Transform self)
     {
-        _sphereTransforms.Remove(self);
+        SphereTransforms.Remove(self);
     }
     
     private void Update()
     {
         
         // clamp to our MAX_SPHERES (64)
-        int count = Mathf.Min(_sphereTransforms.Count, 64);
+        int count = Mathf.Min(SphereTransforms.Count, 64);
         var data  = new Vector4[64];
         int i = 1;
 
         var position = dummySphere.position;
         data[0] = new Vector4(position.x, position.y, position.z,
             dummySphere.localScale.x / 2);
-        Debug.Log(_sphereTransforms.Count);
-        foreach (var trans in _sphereTransforms)
+        Debug.Log(SphereTransforms.Count);
+        foreach (var trans in SphereTransforms)
         {
-            Vector3 p = trans.position;
-            float r = trans.localScale.x / 2;
+            Vector3 p = trans.transform.position;
+            float r = trans.transform.localScale.x / 2;
             data[i] = new Vector4(p.x, p.y, p.z, r);
             i++;
         }
         
         // feed the HLSL globals
         Shader.SetGlobalVectorArray("_Spheres", data);
-        Shader.SetGlobalInt("_SphereNumber", _sphereTransforms.Count + 1);
+        Shader.SetGlobalInt("_SphereNumber", SphereTransforms.Count + 1);
     }
 }
