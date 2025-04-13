@@ -11,6 +11,7 @@
         [SerializeField] private List<GameObject> Prefabs;
         [SerializeField] public float SpawnerAreaSide = 65f;
         [SerializeField] public float DelayBetweenSpawnsSecond = 10f;
+        [SerializeField] private AudioSourceHandler ash;
 
         private Coroutine _coroutine;
         
@@ -81,6 +82,7 @@
 
                 yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
             }
+            ash.SwitchPeacefulToChaotic();
             _coroutine = null;
             DialogueScript.Instance.ProgressPhase();
         }
