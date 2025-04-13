@@ -28,6 +28,8 @@ public class DialogueScript : MonoBehaviour
     private List<UnityEvent> _events;
     private int _currentPhase = 0;
     private Coroutine _activeCoroutine;
+
+    private bool _gameOver = false;
     
     
     void Awake()
@@ -74,7 +76,8 @@ public class DialogueScript : MonoBehaviour
             yield return new WaitForSeconds(8f);
         }
         
-        capybaraAnimation.Play("CapybaraDepart");
+        if(_currentPhase < 3)
+            capybaraAnimation.Play("CapybaraDepart");
         _events[_currentPhase].Invoke();
         _currentPhase += 1;
         _activeCoroutine = null;
