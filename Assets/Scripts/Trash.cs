@@ -18,16 +18,13 @@ public class Trash : MonoBehaviour
     {
         _timer = gracePeriod;
         _groundLayer = LayerMask.NameToLayer("Ground");
-        Debug.Log("DEBQG: " + _groundLayer);
         enabled = false;
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (_createdPollutionBubble) return;
-        Debug.Log(other.gameObject.layer);
         if (other.gameObject.layer != _groundLayer) return;
-        Debug.Log("Step 3");
         enabled = true;
     }
     
@@ -50,7 +47,7 @@ public class Trash : MonoBehaviour
         if (other.gameObject.layer != _groundLayer) return;
         enabled = false;
         _timer = gracePeriod;
-        _createdPollutionBubble.StartShrinkage();
+        if (_createdPollutionBubble) _createdPollutionBubble.StartShrinkage();
         _createdPollutionBubble = null;
     }
 }

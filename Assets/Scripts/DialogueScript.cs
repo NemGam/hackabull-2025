@@ -9,11 +9,10 @@ public class DialogueScript : MonoBehaviour
 {
     public static DialogueScript Instance { get; private set; }
     
-    [SerializeField] private GameObject Dialogue;
     [SerializeField] private TMP_Text DialoguesText;
     [SerializeField] private AudioSource AudioSource;
     [SerializeField] private List<AudioClip> Clips;
-
+    [SerializeField] private Animation capybaraAnimation;
 
     [SerializeField] private List<String> Phase1;
     [SerializeField] private List<String> Phase2;
@@ -29,6 +28,7 @@ public class DialogueScript : MonoBehaviour
     private List<UnityEvent> _events;
     private int _currentPhase = 0;
     private Coroutine _activeCoroutine;
+    
     
     void Awake()
     {
@@ -46,6 +46,9 @@ public class DialogueScript : MonoBehaviour
         _phases = new List<List<string>>() { Phase1, Phase2, Phase3, Phase4 };
         _events = new List<UnityEvent>() { OnEndOfPhase1, OnEndOfPhase2, OnEndOfPhase3, OnEndOfPhase4 };
 
+        // OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
+        // OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
+        // OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, true);}));
         OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(10f, 6, false);})); 
         OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(5f, 12, false);})); 
         OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(4f, 6, true);}));
@@ -58,7 +61,7 @@ public class DialogueScript : MonoBehaviour
         if (_currentPhase < 0 || _currentPhase >= _phases.Count) return;
         if (_phases[_currentPhase] == null || _events[_currentPhase] == null) return;
         if (_activeCoroutine != null) return;
-        Dialogue.SetActive(true);
+        capybaraAnimation.Play("CapybaraAppear");
         AudioSource.PlayOneShot(Clips[_currentPhase]);
         _activeCoroutine = StartCoroutine(ShowReplica(_phases[_currentPhase]));
     }
@@ -71,7 +74,7 @@ public class DialogueScript : MonoBehaviour
             yield return new WaitForSeconds(8f);
         }
         
-        Dialogue.SetActive(false);
+        capybaraAnimation.Play("CapybaraDepart");
         _events[_currentPhase].Invoke();
         _currentPhase += 1;
         _activeCoroutine = null;

@@ -8,8 +8,8 @@ public class PassthroughtWorldDesctruction : MonoBehaviour
     [SerializeField] private Material TreeMaterial;
     [SerializeField] private Material CloudMaterial;
 
-    private Color _defaultTreeColor;
-    private Color _defaultCloudColor;
+    [SerializeField]
+    private Color _defaultTreeColor, _defaultCloudColor;
 
     private bool _worldOnFire = false;
     public float WorldState { get; private set; } = 0f;
@@ -28,14 +28,14 @@ public class PassthroughtWorldDesctruction : MonoBehaviour
 
     public void Start()
     {
-        _defaultTreeColor = TreeMaterial.color;
-        _defaultCloudColor = CloudMaterial.color;
+        TreeMaterial.color = _defaultTreeColor;
+        CloudMaterial.color = _defaultCloudColor;
     }
 
-    private void UpdateWorldState(float value)
+    public void UpdateWorldState(float value)
     {
-        value = Mathf.Clamp01(value); 
-
+        value = Mathf.Clamp01(value);
+        WorldState = value;
         float darkness = 1f - value; 
 
         Color newCloudColor = new Color(
@@ -43,12 +43,11 @@ public class PassthroughtWorldDesctruction : MonoBehaviour
             _defaultCloudColor.g * darkness,
             _defaultCloudColor.b * darkness);
         CloudMaterial.color = newCloudColor;
-
-        Color newTreeColor = new Color(
+        
+        TreeMaterial.color = new Color(
             _defaultTreeColor.r * darkness,
             _defaultTreeColor.g * darkness,
             _defaultTreeColor.b * darkness);
-        TreeMaterial.color = newTreeColor;
 
         if (value >= 0.7f && !_worldOnFire)
         {

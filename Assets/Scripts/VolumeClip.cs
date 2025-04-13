@@ -29,6 +29,16 @@ public class VolumeClip : MonoBehaviour
 
         // DontDestroyOnLoad(gameObject);
     }
+
+    //Speeds up the pollution decay and deletes all the trash
+    public void CleanUp()
+    {
+        foreach (var sphere in SphereTransforms)
+        {
+            PollutionBubble pollutionBubble = sphere.GetComponent<PollutionBubble>();
+            pollutionBubble.ExpressCleanup();
+        }
+    }
     
     public void Register(Transform self)
     {
