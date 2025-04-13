@@ -21,8 +21,6 @@ public class SwapAudio : MonoBehaviour
         audioIndex += -1;
         if (!(audioSource == null || audioClips.Count == 0))
             audioSource.clip = audioClips[0];
-        
-        
     }
     
     void Update()
