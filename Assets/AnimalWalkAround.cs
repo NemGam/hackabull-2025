@@ -78,14 +78,13 @@ public class AnimalWalkAround : MonoBehaviour
         // _rb.AddForce(direction.normalized * speed, ForceMode.VelocityChange);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with something tagged: " + other.gameObject.tag);
+        Debug.Log("Triggered by something tagged: " + other.gameObject.tag);
+
         if (!other.gameObject.CompareTag("Unwalkable")) return;
-        
+
         walkPoint = -transform.forward * 0.08f;
-        Debug.Log("Collided with something tagged: YourTagName");
-        
     }
 
     private IEnumerator SearchPosRoutine()
