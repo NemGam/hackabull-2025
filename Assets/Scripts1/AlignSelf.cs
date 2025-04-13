@@ -20,10 +20,12 @@ public class AlignSelf : MonoBehaviour
 
     IEnumerator Position()
     {
-        while (transform.position != _targetPosition)
+        int iter = 0;
+        while (transform.position != _targetPosition && iter < 10)
         {
             transform.position = _targetPosition;
             yield return new WaitForSeconds(0.1f);
+            iter += 1;
         }
         
     }

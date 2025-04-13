@@ -34,6 +34,7 @@ public class SpawnerScript : MonoBehaviour
 
     private IEnumerator Spawning()
     {
+        yield return new WaitForSeconds(1f);
         while (true)
         {
             float halfSide = SpawnerAreaSide * 0.5f;
