@@ -52,7 +52,7 @@ public class DialogueScript : MonoBehaviour
         // OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
         // OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, true);}));
         OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(8f, 5, false);})); 
-        OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(5f, 10, false);})); 
+        OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(5f, 8, false);})); 
         OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(4f, 6, true);}));
         
         ProgressPhase();
