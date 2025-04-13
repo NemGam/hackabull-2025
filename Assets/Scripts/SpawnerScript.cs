@@ -45,11 +45,18 @@
             
         }
 
+        public void RestartGame()
+        {
+            ash.SwitchChaoticToPeaceful();
+            ExpressCleanUp();
+            VolumeClip.Instance.CleanUp();
+        }
+        
         public void ExpressCleanUp()
         {
             for (int i = transform.childCount - 1; i > -1; i--)
             {
-                Destroy(transform.GetChild(i));
+                Destroy(transform.GetChild(i).gameObject);
             }
         }
 
@@ -96,7 +103,7 @@
                 int randomObject = Random.Range(0, Prefabs.Count);
 
                 Instantiate(Prefabs[randomObject], new Vector3(positionX, transform.position.y, positionZ),
-                    Quaternion.identity);
+                    Quaternion.identity, transform);
 
                 DelayBetweenSpawnsSecond = Mathf.Max(0.6f, DelayBetweenSpawnsSecond - 0.2f);
 

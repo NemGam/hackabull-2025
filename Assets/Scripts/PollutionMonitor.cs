@@ -19,9 +19,9 @@ public class PollutionMonitor : MonoBehaviour
             for (int j = 0; j < matrixWidth; j++)
             {
                 _matrix[i, j] = new PollutionPoint(new Vector3(
-                    (maxPoint.position.x - minPoint.position.x) / 50 * i + minPoint.position.x, 
+                    (maxPoint.position.x - minPoint.position.x) / matrixHeight * i + minPoint.position.x, 
                     0.85f, 
-                    (maxPoint.position.z - minPoint.position.z) / 50 * j + minPoint.position.z)
+                    (maxPoint.position.z - minPoint.position.z) / matrixWidth * j + minPoint.position.z)
                 );
             }
         }
@@ -72,10 +72,6 @@ public class PollutionMonitor : MonoBehaviour
             }
             // Debug.LogError((float)polluted / (matrixHeight * matrixWidth));
             PassthroughtWorldDesctruction.Instance.UpdateWorldState((float)polluted / (matrixHeight * matrixWidth));
-            if ((float)polluted / (matrixHeight * matrixWidth) >= 0.8f)
-            {
-                Debug.LogError("KURWAKURWAKURWAKURWAKURWAKURWAKURWAKURWA");
-            }
             yield return new WaitForSeconds(2f);
         }
     }

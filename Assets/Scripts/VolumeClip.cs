@@ -38,7 +38,6 @@ public class VolumeClip : MonoBehaviour
             PollutionBubble pollutionBubble = sphere.GetComponent<PollutionBubble>();
             pollutionBubble.ExpressCleanup();
         }
-        SpawnerScript.Instance.ExpressCleanUp();
     }
     
     public void Register(Transform self)
