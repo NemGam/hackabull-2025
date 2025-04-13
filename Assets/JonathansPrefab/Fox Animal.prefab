@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1402071670648941610}
   - component: {fileID: 2099802593290139645}
+  - component: {fileID: 3612423630109434956}
+  - component: {fileID: 895172359605996499}
   m_Layer: 0
   m_Name: Fox Animal
   m_TagString: Untagged
@@ -27,12 +29,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00396, y: 0, z: -0.01488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2021, y: 2.2021, z: 2.2021}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3514933453527903200}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &2099802593290139645
 Animation:
   m_ObjectHideFlags: 0
@@ -50,6 +52,45 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &3612423630109434956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950059165531296430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7699101b9746f468c3399cfd0071cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkRadius: 0.3
+  acceptableYDiff: 0.001
+  speed: 0.03
+  rotationSpeed: 5
+--- !u!136 &895172359605996499
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950059165531296430}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.008
+  m_Height: 0.005
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.005, z: 0}
 --- !u!1 &7857003354400752923
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +122,7 @@ Transform:
   m_Children:
   - {fileID: 7816022864014773223}
   m_Father: {fileID: 1402071670648941610}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.9559708}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.1702049}
 --- !u!1001 &7778470955719060492
 PrefabInstance:
   m_ObjectHideFlags: 0

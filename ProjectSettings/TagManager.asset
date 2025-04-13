@@ -8,6 +8,7 @@ TagManager:
   - Metal
   - Other
   - Paper
+  - Unwalkable
   layers:
   - Default
   - TransparentFX
