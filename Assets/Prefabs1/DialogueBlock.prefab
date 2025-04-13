@@ -4843,6 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3123436630258860342}
   - component: {fileID: 1093032958420100939}
+  - component: {fileID: 7818184892169679706}
   m_Layer: 0
   m_Name: DialogueBlock
   m_TagString: Untagged
@@ -4880,6 +4881,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue: {fileID: 5814909849151591139}
   DialoguesText: {fileID: 8260914954323243546}
+  AudioSource: {fileID: 7818184892169679706}
+  Clips:
+  - {fileID: 8300000, guid: ae1d06a26d5bda94393be09f28179dea, type: 3}
+  - {fileID: 8300000, guid: f645dd8fde4318e4ab37b6293c7def17, type: 3}
+  - {fileID: 8300000, guid: fb26bc52688047b4bb3d2903f5c603ac, type: 3}
+  - {fileID: 8300000, guid: 6ea742b3d4b1fdb4b8f0fc734f9b7476, type: 3}
   Phase1:
   - Oh! Hello there! Welcome to Peaceful Valley - our little slice of harmony
   - "A tourist came through recently\u2026 seemed nice at first, but started tossing
@@ -4929,6 +4936,103 @@ MonoBehaviour:
   OnEndOfPhase4:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &7818184892169679706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519085058349181818}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5814909849151591139
 GameObject:
   m_ObjectHideFlags: 0

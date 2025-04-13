@@ -11,6 +11,8 @@ public class DialogueScript : MonoBehaviour
     
     [SerializeField] private GameObject Dialogue;
     [SerializeField] private TMP_Text DialoguesText;
+    [SerializeField] private AudioSource AudioSource;
+    [SerializeField] private List<AudioClip> Clips;
 
 
     [SerializeField] private List<String> Phase1;
@@ -55,9 +57,9 @@ public class DialogueScript : MonoBehaviour
     {
         if (_currentPhase < 0 || _currentPhase >= _phases.Count) return;
         if (_phases[_currentPhase] == null || _events[_currentPhase] == null) return;
-        if (_activeCoroutine != null) return; 
-
+        if (_activeCoroutine != null) return;
         Dialogue.SetActive(true);
+        AudioSource.PlayOneShot(Clips[_currentPhase]);
         _activeCoroutine = StartCoroutine(ShowReplica(_phases[_currentPhase]));
     }
 
