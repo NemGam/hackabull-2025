@@ -66,7 +66,7 @@ public class DialogueScript : MonoBehaviour
         foreach (var line in phase)
         {
             DialoguesText.text = line;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(8f);
         }
         
         Dialogue.SetActive(false);
