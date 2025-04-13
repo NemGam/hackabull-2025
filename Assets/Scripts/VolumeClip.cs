@@ -7,12 +7,16 @@ using UnityEngine;
 public class VolumeClip : MonoBehaviour
 {
     public static VolumeClip Instance;
-
+    
     [SerializeField, Tooltip("Dummy sphere, DO NOT DELETE. REQUIRED FOR SHADER TO WORK")] private Transform dummySphere;
     
     [SerializeField, Tooltip("List of sphere Transforms")]
     private HashSet<Transform> _sphereTransforms = new HashSet<Transform>();
 
+    [SerializeField] private float maxExpansion;
+
+    public float OverallPollutionExpansion { get; private set; }
+    
     private void Awake()
     {
         
@@ -28,6 +32,14 @@ public class VolumeClip : MonoBehaviour
         // DontDestroyOnLoad(gameObject);
     }
 
+    public void ChangeOverallExpansion(float delta)
+    {
+        OverallPollutionExpansion += delta;
+        
+        Debug.Log(OverallPollutionExpansion / maxExpansion);
+        
+    }
+    
     public void Register(Transform self)
     {
         _sphereTransforms.Add(self);

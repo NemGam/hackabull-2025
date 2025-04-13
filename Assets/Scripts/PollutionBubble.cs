@@ -4,7 +4,7 @@ using UnityEngine;
 public class PollutionBubble : MonoBehaviour
 {
     [SerializeField] private float expansionRate, shrinkRate;
-    private float _currentExpansion = 0.01f;
+    private float _currentExpansion = 0.001f;
     private bool _isExpanding;
 
     private void Start()
@@ -18,7 +18,7 @@ public class PollutionBubble : MonoBehaviour
         if (_isExpanding)
         {
             _currentExpansion += expansionRate * Time.deltaTime;
-            transform.localScale = Vector3.one * _currentExpansion; 
+            transform.localScale = Vector3.one * _currentExpansion;
         }
         else
         {
@@ -26,6 +26,7 @@ public class PollutionBubble : MonoBehaviour
             transform.localScale = Vector3.one * _currentExpansion; 
             if (_currentExpansion <= 0f) Destroy(gameObject);
         }
+        VolumeClip.Instance.ChangeOverallExpansion(_currentExpansion);
     }
 
     private void OnDisable()
