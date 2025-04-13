@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkRadius: 1
-  acceptableYDiff: 0.001
   speed: 0.01
   rotationSpeed: 5
+  walkRegion: {fileID: 0}
 --- !u!1 &9012673190984667487
 GameObject:
   m_ObjectHideFlags: 0

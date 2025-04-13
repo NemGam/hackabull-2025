@@ -65,9 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkRadius: 0.3
-  acceptableYDiff: 0.001
   speed: 0.03
   rotationSpeed: 5
+  walkRegion: {fileID: 0}
 --- !u!136 &895172359605996499
 CapsuleCollider:
   m_ObjectHideFlags: 0

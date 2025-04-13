@@ -88,8 +88,8 @@ public class AnimalWalkAround : MonoBehaviour
     {
         while (true)
         {
-            SearchWalkPoint();
             yield return new WaitForSeconds(5f); // wait 5 seconds
+            SearchWalkPoint();
         }
     }
 

@@ -44,10 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba96f94669db234784b42dd182543c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matrixWidth: 50
-  matrixHeight: 50
-  minPoint: {x: -12.66, y: 0, z: -12.57}
-  maxPoint: {x: 12.66, y: 0, z: 9.14}
+  minPoint: {fileID: 0}
+  maxPoint: {fileID: 0}
 --- !u!1 &5664724633038667581
 GameObject:
   m_ObjectHideFlags: 0
