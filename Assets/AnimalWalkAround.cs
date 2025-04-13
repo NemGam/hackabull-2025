@@ -6,19 +6,17 @@ using Random = UnityEngine.Random;
 
 public class AnimalWalkAround : MonoBehaviour
 {
-    [SerializeField] private float walkRadius = 1f;
-    [SerializeField] private float acceptableYDiff = 0.001f;
+    [SerializeField] private float walkRadius = 0.15f;
     [SerializeField] private float speed = 0.01f;
     [SerializeField] private float rotationSpeed = 5f;
-
-    private BoxCollider boxCollider;
+    [SerializeField] Transform walkRegion;
+    
     private Vector3 walkPoint;
     private bool walkPointSet;
     
     // Start is called once before the first execution of Update after
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
         StartCoroutine(SearchPosRoutine());
     }
 
@@ -44,24 +42,23 @@ public class AnimalWalkAround : MonoBehaviour
 
     private void SearchWalkPoint()
     {
-        float randomZ = transform.position.z;
-        float randomX = transform.position.x;
-        float randPosY = -500f;         // Just initalize it as a very bad thing 
+        float randomZ = 0f;
+        float randomX = 0f;
+        // float randPosY = -500f;         // Just initalize it to a spot that would trigger the while loop
         RaycastHit hit;
 
-        while (!(randPosY > transform.position.y - acceptableYDiff && randPosY < transform.position.y + acceptableYDiff))
-        {
-            randomZ = Random.Range(-walkRadius, walkRadius);
-            randomX = Random.Range(-walkRadius, walkRadius);
-            
-            Physics.Raycast(
-                new Vector3(transform.position.x + randomX, transform.position.y + .15f,
-                    transform.position.z + randomZ), Vector3.down, out hit, .2f);
-            
-            randPosY = hit.point.y;
-        }
         
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y + randPosY, transform.position.z +randomZ);
+        randomZ = Random.Range(-walkRadius, walkRadius);
+        randomX = Random.Range(-walkRadius, walkRadius);
+        
+        // Physics.Raycast(
+        //     new Vector3(transform.position.x + randomX, transform.position.y + .15f,
+        //         transform.position.z + randomZ), Vector3.down, out hit, .2f);
+        //
+        // randPosY = hit.point.y;
+       
+        
+        walkPoint = new Vector3(walkRegion.position.x + randomX, walkRegion.position.y, walkRegion.position.z +randomZ);
         walkPointSet = true;
     }
 
@@ -84,7 +81,7 @@ public class AnimalWalkAround : MonoBehaviour
 
         if (!other.gameObject.CompareTag("Unwalkable")) return;
 
-        walkPoint = -transform.forward * 0.08f;
+        walkPoint = transform.position - transform.forward * 0.04f;
     }
 
     private IEnumerator SearchPosRoutine()
