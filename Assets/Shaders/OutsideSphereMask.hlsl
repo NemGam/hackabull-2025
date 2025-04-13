@@ -8,7 +8,7 @@ float4 _Spheres[MAX_SPHERES];   // xyz = center, w = radius
 int   _SphereNumber;
 
 
-float SampleSphereMask_float (float3 worldPos, out float mask, out float minAbsDist)
+float SampleOutsideSphereMask_float (float3 worldPos, out float mask, out float minAbsDist)
 {
     minAbsDist = 1e6;
     // Union of all spheres: bail out as soon as we hit one
@@ -21,11 +21,11 @@ float SampleSphereMask_float (float3 worldPos, out float mask, out float minAbsD
         minAbsDist = min(minAbsDist, abs(dist));
         if (dot(d, d) < sp.w * sp.w)
         {
-            mask =  1.0f;
-            return 1.0f;
+            mask = 0.0f;
+            return 0.0f;
         }
             
     }
-    mask = 0.0f;
-    return 0.0f;
+    mask = 1.0f;
+    return 1.0f;
 }
