@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2909285348536397289}
   - component: {fileID: 3522971894978428109}
   - component: {fileID: 4002037956779398828}
+  - component: {fileID: 4251463973793116374}
   m_Layer: 0
-  m_Name: Clipper
+  m_Name: PollutionBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,3 +87,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4251463973793116374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162079871419583704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fac5f18e3868704683c6e98a5b200d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expansionRate: 0.03
+  shrinkRate: 0.03
