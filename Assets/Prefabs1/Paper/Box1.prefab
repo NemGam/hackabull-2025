@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5141765298586835714}
   - component: {fileID: 7146491002504866163}
   - component: {fileID: 7265448600368620113}
+  - component: {fileID: -5768237993678184155}
   m_Layer: 0
   m_Name: Box1
   m_TagString: Paper
@@ -137,6 +138,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.047390636, y: 0.035, z: 0.047390632}
   m_Center: {x: -0.0035807714, y: 0.014171057, z: -0.0035807677}
+--- !u!114 &-5768237993678184155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060439435091797466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b37aeceb2ade46adc57d96f7f9a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollutionBubblePrefab: {fileID: 2909285348536397289, guid: 96cee0a04b6dde449872c9ef590eb2cb, type: 3}
+  gracePeriod: 3
+  rigidbody: {fileID: 7146491002504866163}
 --- !u!1 &5420849081669403588
 GameObject:
   m_ObjectHideFlags: 0

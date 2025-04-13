@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6919690926778801408}
   - component: {fileID: 5664294648266761163}
   - component: {fileID: 1206122591937958353}
+  - component: {fileID: -8325285021879911208}
   m_Layer: 0
   m_Name: Bottle3
   m_TagString: Glass
@@ -140,6 +141,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03, y: 0.085, z: 0.03}
   m_Center: {x: 0, y: 0.034944, z: 0}
+--- !u!114 &-8325285021879911208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829369750644882074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b37aeceb2ade46adc57d96f7f9a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollutionBubblePrefab: {fileID: 2909285348536397289, guid: 96cee0a04b6dde449872c9ef590eb2cb, type: 3}
+  gracePeriod: 3
+  rigidbody: {fileID: 5664294648266761163}
 --- !u!1 &1460947481583755645
 GameObject:
   m_ObjectHideFlags: 0

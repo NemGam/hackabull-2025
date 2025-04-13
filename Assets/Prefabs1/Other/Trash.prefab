@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 5419420401410399032}
   - component: {fileID: 6257820284505342491}
   - component: {fileID: 5786657661942340822}
+  - component: {fileID: -3841844204326938801}
   m_Layer: 0
   m_Name: Trash
   m_TagString: Other
@@ -345,3 +346,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02365029, y: 0.04066472, z: 0.024644531}
   m_Center: {x: -0.00029149465, y: -0.00020439737, z: -0.0007029539}
+--- !u!114 &-3841844204326938801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276142786851468121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b37aeceb2ade46adc57d96f7f9a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollutionBubblePrefab: {fileID: 2909285348536397289, guid: 96cee0a04b6dde449872c9ef590eb2cb, type: 3}
+  gracePeriod: 3
+  rigidbody: {fileID: 6257820284505342491}

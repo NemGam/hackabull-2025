@@ -51,7 +51,7 @@ public class VolumeClip : MonoBehaviour
         var position = dummySphere.position;
         data[0] = new Vector4(position.x, position.y, position.z,
             dummySphere.localScale.x / 2);
-        Debug.Log(SphereTransforms.Count);
+
         foreach (var trans in SphereTransforms)
         {
             Vector3 p = trans.transform.position;

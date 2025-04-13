@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 5263341568246926645}
   - component: {fileID: 184975900094423073}
   - component: {fileID: 8148085183560099135}
+  - component: {fileID: -5906838571423383676}
   m_Layer: 0
   m_Name: Can2
   m_TagString: Metal
@@ -227,6 +228,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09494436, y: 0.04109048, z: 0.07603044}
   m_Center: {x: 0.020284384, y: -0.024574142, z: 0.04705712}
+--- !u!114 &-5906838571423383676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041144611682568500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b37aeceb2ade46adc57d96f7f9a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollutionBubblePrefab: {fileID: 2909285348536397289, guid: 96cee0a04b6dde449872c9ef590eb2cb, type: 3}
+  gracePeriod: 3
+  rigidbody: {fileID: 184975900094423073}
 --- !u!1 &7450187580163451806
 GameObject:
   m_ObjectHideFlags: 0
