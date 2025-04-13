@@ -1,55 +1,87 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Random = UnityEngine.Random;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using Random = UnityEngine.Random;
 
-public class SpawnerScript : MonoBehaviour
-{
-    [SerializeField] private List<GameObject> Prefabs;
-    [SerializeField] public float SpawnerAreaSide = 65f;
-    [SerializeField] public float DelayBetweenSpawnsSecond = 10f;
-
-    private Coroutine _coroutine;
-    
-    
-
-    public void Start()
+    public class SpawnerScript : MonoBehaviour
     {
-        StartSpawning();
-    }
+        public static SpawnerScript Instance { get; private set; }
+        
+        [SerializeField] private List<GameObject> Prefabs;
+        [SerializeField] public float SpawnerAreaSide = 65f;
+        [SerializeField] public float DelayBetweenSpawnsSecond = 10f;
 
-    public void StartSpawning()
-    {
-        if (_coroutine != null) return;
-        _coroutine = StartCoroutine(Spawning());
-    }
-
-    public void StopSpawning()
-    {
-        if(_coroutine != null)
+        private Coroutine _coroutine;
+        
+        void Awake()
         {
-            StopCoroutine(_coroutine);
+            if (Instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
+
+        public void StartSpawning(float delay, int targetObjects, bool lastPhase)
+        {
+            DelayBetweenSpawnsSecond = delay;
+            
+            if (_coroutine != null) return;
+
+            if (lastPhase)
+            {
+                _coroutine = StartCoroutine(FinalSpawning());
+            }
+            else
+            {
+                _coroutine = StartCoroutine(Spawning(targetObjects));    
+            }
+            
+        }
+
+        private IEnumerator Spawning(int targetObjects)
+        {
+            int counter = 0;
+            while (counter < targetObjects)
+            {
+                float halfSide = SpawnerAreaSide * 0.5f;
+                float positionX = transform.position.x + Random.Range(-halfSide, halfSide);
+                float positionZ = transform.position.z + Random.Range(-halfSide, halfSide);
+
+                int randomObject = Random.Range(0, Prefabs.Count);
+
+                Instantiate(Prefabs[randomObject], new Vector3(positionX, transform.position.y, positionZ),
+                    Quaternion.identity);
+
+                counter += 1;
+
+                yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
+            }
             _coroutine = null;
+            DialogueScript.Instance.ProgressPhase();
         }
-    }
-
-    private IEnumerator Spawning()
-    {
-        yield return new WaitForSeconds(1f);
-        while (true)
+        
+        private IEnumerator FinalSpawning()
         {
-            float halfSide = SpawnerAreaSide * 0.5f;
-            float positionX = transform.position.x + Random.Range(-halfSide, halfSide);
-            float positionZ = transform.position.z + Random.Range(-halfSide, halfSide);
+            while (PassthroughtWorldDesctruction.Instance.WorldState < 0.8f)
+            {
+                float halfSide = SpawnerAreaSide * 0.5f;
+                float positionX = transform.position.x + Random.Range(-halfSide, halfSide);
+                float positionZ = transform.position.z + Random.Range(-halfSide, halfSide);
 
-            int randomObject = Random.Range(0, Prefabs.Count);
+                int randomObject = Random.Range(0, Prefabs.Count);
 
-            Instantiate(Prefabs[randomObject], new Vector3(positionX, transform.position.y, positionZ),
-                Quaternion.identity);
+                Instantiate(Prefabs[randomObject], new Vector3(positionX, transform.position.y, positionZ),
+                    Quaternion.identity);
 
-            yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
+                DelayBetweenSpawnsSecond = Mathf.Max(0.6f, DelayBetweenSpawnsSecond - 0.2f);
 
+                yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
+            }
+            _coroutine = null;
+            DialogueScript.Instance.ProgressPhase();
         }
     }
-}

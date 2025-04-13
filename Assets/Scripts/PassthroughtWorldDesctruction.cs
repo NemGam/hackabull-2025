@@ -12,7 +12,8 @@ public class PassthroughtWorldDesctruction : MonoBehaviour
     private Color _defaultCloudColor;
 
     private bool _worldOnFire = false;
-    private float _worldState = 0f;
+    public float WorldState { get; private set; } = 0f;
+
     
     void Awake()
     {
@@ -57,8 +58,8 @@ public class PassthroughtWorldDesctruction : MonoBehaviour
 
     public void AddToWorldState(float value)
     {
-        _worldState += value;
-        UpdateWorldState(_worldState);
+        WorldState += value;
+        UpdateWorldState(WorldState);
     }
 
 }
