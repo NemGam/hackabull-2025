@@ -3,7 +3,12 @@ guid: ad83ba942af6f7d479884e4a4f066e5d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capybara_mat
+    second: {fileID: 2100000, guid: 5262f1483b3f4264f9442df0bf0e2888, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
