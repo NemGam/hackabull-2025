@@ -11,6 +11,8 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] public float DelayBetweenSpawnsSecond = 10f;
 
     private Coroutine _coroutine;
+    
+    
 
     public void Start()
     {
