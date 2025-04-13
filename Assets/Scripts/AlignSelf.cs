@@ -4,11 +4,14 @@ using UnityEngine;
 public class AlignSelf : MonoBehaviour
 {
     [SerializeField] private float valueY;
+    [SerializeField] private bool alignRotation = true;
+    
 
     private Vector3 _targetPosition;
     void Start()
     {
-        transform.rotation = Quaternion.identity;
+        if(alignRotation)
+            transform.rotation = Quaternion.identity;
         
         Vector3 pos = transform.position;
         pos.y = valueY;

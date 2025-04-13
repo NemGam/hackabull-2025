@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 0bbde371-5196-4a08-ad35-0e4a363ca785
+  instanceId: f475e554-eaf0-4a6f-a5bd-08b3d98c7843
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -6172,7 +6172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: a99fc303-cbb7-4c3a-b077-e7c9d5e66844
+  instanceId: 494e5d6b-2775-457c-8467-b2a775931574
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -16885,7 +16885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: ff2f5cd9-7b30-43ef-b8d3-607f1fd88520
+  instanceId: 9e545361-e681-427d-9330-8259e968875c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -17592,7 +17592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 2e28807a-e728-4b92-ae29-6d1edb724d6f
+  instanceId: 53df0022-076c-46e5-ae24-28b9ae5d26b5
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -18295,7 +18295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: 8572bd28-2a5a-492b-a5ea-ae230d7893ba
+  instanceId: 79bf06ed-32f9-445b-b017-fae29fa61dc2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -18960,7 +18960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: e17befdf-e857-4a47-a02b-45597754b43c
+  instanceId: e9936a9a-73eb-40d1-8506-6a1492bcda1a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -19237,7 +19237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 36c0f1fe-b759-4c1f-9b41-4056a2d19d23
+  instanceId: 015058a6-bdcc-4249-a9c6-5bb38bb6bac9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -19937,7 +19937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f10154e0-16b2-492f-97d0-6639f69e7df6
-  instanceId: 36d19922-f528-4a91-b759-fadca546ad4d
+  instanceId: 364a827b-b6b5-4cca-aa52-3bfd19b7bf53
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -21359,7 +21359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: d36160fd-3e03-4e4f-bfb1-e341e0929eed
+  instanceId: b46942ec-001a-4803-bce1-abc9b5c7f051
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22443,7 +22443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boxes: {fileID: 2784155867406888444}
-  yHeight: 0.75
+  yHeight: 0.85
   CenterEye: {fileID: 4495538930778768187}
 --- !u!1 &8371771320546742973
 GameObject:
@@ -22658,7 +22658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: a9ca32e7-a4e1-4152-8695-18cec4ea5b1c
+  instanceId: 02b2d773-dc53-411c-8581-51cdae1e5104
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -24386,6 +24386,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 15a62a954acc93848b3391efc727e69c, type: 3}
+    - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
       propertyPath: TagToCompare
       value: Metal
       objectReference: {fileID: 0}
@@ -24515,6 +24519,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a6005ae4b2a1d1a42b19acf9776e60b9, type: 3}
     - target: {fileID: 7395814019386808962, guid: a8830336ee33798419837eab5d3e476c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -24649,6 +24657,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a2fe99e5671ba5244a15a5a28e5a834d, type: 3}
     - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
       propertyPath: TagToCompare
       value: Paper
@@ -24787,6 +24799,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: f44fc28c88faeec45923dcdec384132f, type: 3}
     - target: {fileID: 7236639264680327028, guid: a8830336ee33798419837eab5d3e476c, type: 3}
       propertyPath: TagToCompare
       value: Other
