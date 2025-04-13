@@ -46,12 +46,12 @@ public class DialogueScript : MonoBehaviour
         _phases = new List<List<string>>() { Phase1, Phase2, Phase3, Phase4 };
         _events = new List<UnityEvent>() { OnEndOfPhase1, OnEndOfPhase2, OnEndOfPhase3, OnEndOfPhase4 };
 
-        OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
-        OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
-        OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, true);}));
-        // OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(10f, 6, false);})); 
-        // OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(5f, 12, false);})); 
-        // OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(4f, 6, true);}));
+        // OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
+        // OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, false);})); 
+        // OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(1f, 1, true);}));
+        OnEndOfPhase1.AddListener((() => {SpawnerScript.Instance.StartSpawning(10f, 6, false);})); 
+        OnEndOfPhase2.AddListener((() => {SpawnerScript.Instance.StartSpawning(5f, 12, false);})); 
+        OnEndOfPhase3.AddListener((() => {SpawnerScript.Instance.StartSpawning(4f, 6, true);}));
         
         ProgressPhase();
     }
