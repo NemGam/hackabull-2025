@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8517175023520331029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7072591711793483140}
+  - component: {fileID: 6927493580064722233}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7072591711793483140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517175023520331029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6927493580064722233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517175023520331029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7847749e3414be43adc60a0dce20d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefabs:
+  - {fileID: 6926150617231436680, guid: 221650aef7c97fb4fa581063ff7ef403, type: 3}
+  - {fileID: 1775287132860710402, guid: 00f26c391c4c33e4d8fb4756a53c4fdf, type: 3}
+  - {fileID: 829369750644882074, guid: f2c5b8057f2d3d8489f9ce5e5c43bfaa, type: 3}
+  - {fileID: 4523825482454629298, guid: 4c5dc0e8f358a004993232843d9d208e, type: 3}
+  - {fileID: 7041144611682568500, guid: 59dfb65619778594d8ea66c995aa3072, type: 3}
+  - {fileID: 4627967802372394983, guid: 249d47af9677bba45b24909223a41486, type: 3}
+  - {fileID: 3501521749755906891, guid: 0ff72d7df7e95d942be4f02b80e140d4, type: 3}
+  - {fileID: 8672478265694804951, guid: 987dd8d9ced06b948ac4d04c06defdd1, type: 3}
+  - {fileID: 6276142786851468121, guid: fdfaa3fad31444741805a302975d8d09, type: 3}
+  - {fileID: 1060439435091797466, guid: 7c0a722574acfeb4e9e3c3a6e41aefc8, type: 3}
+  - {fileID: 5443646428204313252, guid: 2d0c666e5d5ff0a4c9911722b03468e5, type: 3}
+  - {fileID: 7332702001925297432, guid: 85edd42a66e20c1458323edff408ffca, type: 3}
+  SpawnerAreaSide: 1
+  DelayBetweenSpawnsSecond: 3
