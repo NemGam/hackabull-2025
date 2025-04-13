@@ -1,9 +1,11 @@
 # Peaceful Valley
 
-###
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/byPcyoUJvHc/0.jpg)](https://www.youtube.com/watch?v=byPcyoUJvHc)
+### Video
+---
+[![YouTube](http://i.ytimg.com/vi/byPcyoUJvHc/hqdefault.jpg)](https://www.youtube.com/watch?v=byPcyoUJvHc)
  
 ### All open assets we used and links
+---
 <details>
   <summary> Click Here to view </summary>
 Using open Audio and 3D model assets 
@@ -19,6 +21,7 @@ Using open Audio and 3D model assets
 * Capybara Voice - https://www.narakeet.com/ (Using American - Justin)
 
 ### 3D Model Citations
+---
  * Environment ground - https://poly.pizza/m/0nsE2b8uXZy 
  * Fox - https://poly.pizza/m/wliHW1Bbyc
  * Chicken - https://poly.pizza/m/1YE8U35HXsI
