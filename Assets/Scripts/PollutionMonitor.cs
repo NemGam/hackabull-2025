@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PollutionMonitor : MonoBehaviour
 {
-    [SerializeField] private int matrixWidth = 50;
-    [SerializeField] private int matrixHeight = 50;
+    private int matrixWidth = 40;
+    private int matrixHeight = 40;
 
-    [SerializeField] private Vector3 minPoint, maxPoint;
+    [SerializeField] private Transform minPoint, maxPoint;
     
     private PollutionPoint[,] _matrix; 
     
@@ -19,9 +19,9 @@ public class PollutionMonitor : MonoBehaviour
             for (int j = 0; j < matrixWidth; j++)
             {
                 _matrix[i, j] = new PollutionPoint(new Vector3(
-                    (maxPoint.x - minPoint.x) / 50 * i + minPoint.x, 
-                    0, 
-                    (maxPoint.z - minPoint.z) / 50 * j + minPoint.z)
+                    (maxPoint.position.x - minPoint.position.x) / 50 * i + minPoint.position.x, 
+                    0.85f, 
+                    (maxPoint.position.z - minPoint.position.z) / 50 * j + minPoint.position.z)
                 );
             }
         }
@@ -38,7 +38,7 @@ public class PollutionMonitor : MonoBehaviour
             for (int j = 0; j < matrixWidth; j++)
             {
                 Gizmos.color = _matrix[i, j].Polluted ?  Color.red : Color.white;
-                Gizmos.DrawSphere(_matrix[i, j].Position, 0.2f);
+                Gizmos.DrawSphere(_matrix[i, j].Position, 0.01f);
             }
         }
     }
@@ -70,8 +70,12 @@ public class PollutionMonitor : MonoBehaviour
                     }
                 }
             }
-            
-            Debug.Log((float)polluted / (matrixHeight * matrixWidth));
+            // Debug.LogError((float)polluted / (matrixHeight * matrixWidth));
+            PassthroughtWorldDesctruction.Instance.UpdateWorldState((float)polluted / (matrixHeight * matrixWidth));
+            if ((float)polluted / (matrixHeight * matrixWidth) >= 0.8f)
+            {
+                Debug.LogError("KURWAKURWAKURWAKURWAKURWAKURWAKURWAKURWA");
+            }
             yield return new WaitForSeconds(2f);
         }
     }

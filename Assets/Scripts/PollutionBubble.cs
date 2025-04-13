@@ -4,7 +4,7 @@ using UnityEngine;
 public class PollutionBubble : MonoBehaviour
 {
     [SerializeField] private float expansionRate, shrinkRate;
-    private float _currentExpansion = 0.001f;
+    private float _currentExpansion;
     private bool _isExpanding;
 
     private void Start()
@@ -28,6 +28,12 @@ public class PollutionBubble : MonoBehaviour
         }
     }
 
+    public void ExpressCleanup()
+    {
+        StartShrinkage();
+        shrinkRate *= 5;
+    }
+    
     private void OnDisable()
     {
         VolumeClip.Instance.Unregister(transform);

@@ -13,6 +13,8 @@
         [SerializeField] public float DelayBetweenSpawnsSecond = 10f;
         [SerializeField] private AudioSourceHandler ash;
 
+        
+
         private Coroutine _coroutine;
         
         void Awake()
@@ -43,11 +45,24 @@
             
         }
 
+        public void ExpressCleanUp()
+        {
+            for (int i = transform.childCount - 1; i > -1; i--)
+            {
+                Destroy(transform.GetChild(i));
+            }
+        }
+
         private IEnumerator Spawning(int targetObjects)
         {
             int counter = 0;
             while (counter < targetObjects)
             {
+                if (transform.childCount >= 30)
+                {
+                    yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
+                    continue;
+                }
                 float halfSide = SpawnerAreaSide * 0.5f;
                 float positionX = transform.position.x + Random.Range(-halfSide, halfSide);
                 float positionZ = transform.position.z + Random.Range(-halfSide, halfSide);
@@ -55,8 +70,8 @@
                 int randomObject = Random.Range(0, Prefabs.Count);
 
                 Instantiate(Prefabs[randomObject], new Vector3(positionX, transform.position.y, positionZ),
-                    Quaternion.identity);
-
+                    Quaternion.identity, transform);
+                
                 counter += 1;
 
                 yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
@@ -69,6 +84,11 @@
         {
             while (PassthroughtWorldDesctruction.Instance.WorldState < 0.8f)
             {
+                if (transform.childCount >= 30)
+                {
+                    yield return new WaitForSeconds(DelayBetweenSpawnsSecond);
+                    continue;
+                }
                 float halfSide = SpawnerAreaSide * 0.5f;
                 float positionX = transform.position.x + Random.Range(-halfSide, halfSide);
                 float positionZ = transform.position.z + Random.Range(-halfSide, halfSide);
