@@ -61,7 +61,7 @@ public class AnimalWalkAround : MonoBehaviour
             randPosY = hit.point.y;
         }
         
-        walkPoint = new Vector3(randomX, randPosY, randomZ);
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y + randPosY, transform.position.z +randomZ);
         walkPointSet = true;
     }
 
