@@ -54,15 +54,15 @@ public class AudioSourceHandler : MonoBehaviour
             ChaoticPlayer();
         }
         
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SwitchPeacefulToChaotic();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SwitchChaoticToPeaceful();
-        }
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     SwitchPeacefulToChaotic();
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.K))
+        // {
+        //     SwitchChaoticToPeaceful();
+        // }
     }
 
     public void SwitchPeacefulToChaotic()
